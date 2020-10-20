@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EpolisParam.Models.Mpertanggungan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KODEPERTANGGUNGAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESKRIPSI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RATEPERTANGGUNGAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RESIKO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KODEPERTANGGUNGAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESKRIPSI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RATEPERTANGGUNGAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RESIKO)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID" data-toggle="tooltip" title="Edit" class="btn btn-edit fa fa-edit"></a> |
+                <a asp-action="Details" asp-route-id="@item.ID" data-toggle="tooltip" title="Lihat Detail" class="btn btn-edit fa fa-eye"></a> |
+                <a asp-action="Delete" asp-route-id="@item.ID" data-toggle="tooltip" title="Hapus" class="btn btn-edit fa fa-trash"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

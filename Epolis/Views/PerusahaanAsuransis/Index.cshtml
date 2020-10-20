@@ -1,0 +1,72 @@
+﻿@model IEnumerable<EPolis.Models.PerusahaanAsuransi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center><h2>DAFTAR PERUSAHAAN ASURANSI</h2></center>
+
+<p>
+    <a asp-action="Create" class="btn-lg btn-add fa fa-plus"> Tambah Baru</a>
+</p>
+<table class="table table-bordered table-responsive" id="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KODEPERUSAHAAN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAMAPERUSAHAAN)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ALAMAT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOTLP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOFAX)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CONTACTPERSON)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KODEPERUSAHAAN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NAMAPERUSAHAAN)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.ALAMAT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOTLP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOFAX)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.CONTACTPERSON)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EMAIL)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID" data-toggle="tooltip" title="Edit" class="btn btn-edit fa fa-edit"></a> |
+                    <a asp-action="Details" asp-route-id="@item.ID" data-toggle="tooltip" title="Lihat Detail" class="btn btn-edit fa fa-eye"></a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID" data-toggle="tooltip" title="Hapus" class="btn btn-edit fa fa-trash"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

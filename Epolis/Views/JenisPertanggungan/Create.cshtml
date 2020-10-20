@@ -1,0 +1,65 @@
+﻿@model EPolis.Models.MJENISPERTANGGUNGAN
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<center><h2>Tambah Data Jenis Pertanggungan</h2></center>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" autocomplete="off" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-lg-12">
+                <label asp-for="OKUPASIID" class="control-label col-lg-4"></label>
+                <input asp-for="OKUPASIID" class="col-lg-8" />
+                <span asp-validation-for="OKUPASIID" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="KODEPERTANGGUNGAN" class="control-label col-lg-4"></label>
+                <input asp-for="KODEPERTANGGUNGAN" class="col-lg-8" />
+                <span asp-validation-for="KODEPERTANGGUNGAN" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="DESKRIPSI" class="control-label col-lg-4"></label>
+                <input asp-for="DESKRIPSI" class="col-lg-8" />
+                <span asp-validation-for="DESKRIPSI" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="RATEPERTANGGUNGAN" class="control-label col-lg-4"></label>
+                <input asp-for="RATEPERTANGGUNGAN" class="col-lg-8" />
+                <span asp-validation-for="RATEPERTANGGUNGAN" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="RESIKOID" class="control-label col-lg-4"></label>
+               <select class="col-lg-8" >
+                   <option value="High Risk">High Risk</option>
+                   <option value="Middle Risk">Middle Risk</option>
+                   <option value="Simple Risk">Simple Risk</option>
+               </select>
+                <span asp-validation-for="RESIKOID" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12" hidden>
+                <label asp-for="UPDATEDBY" class="control-label col-lg-4"></label>
+                <input asp-for="UPDATEDBY" class="col-lg-8" />
+                <span asp-validation-for="UPDATEDBY" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12" hidden>
+                <label asp-for="UPDATEDATE" class="control-label col-lg-4"></label>
+                <input asp-for="UPDATEDATE" value="@DateTime.Today" type="datetime" class="control-label col-lg-8" />
+                <span asp-validation-for="UPDATEDATE" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <input type="submit" value="Simpan" class="btn btn-save pull-right" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Kembali</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

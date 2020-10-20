@@ -1,0 +1,71 @@
+﻿@model EpolisParam.Models.Mbroker
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<center><h2>Ubah Data Broker</h2></center>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" autocomplete="off" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group col-lg-12">
+                <label asp-for="KODEBROKER" class="control-label col-lg-4"></label>
+                <input asp-for="KODEBROKER" class="col-lg-8" />
+                <span asp-validation-for="KODEBROKER" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="NAMABROKER" class="control-label col-lg-4"></label>
+                <input asp-for="NAMABROKER" class="col-lg-8" />
+                <span asp-validation-for="NAMABROKER" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="ALAMAT" class="control-label col-lg-4"></label>
+                <input asp-for="ALAMAT" class="col-lg-8" />
+                <span asp-validation-for="ALAMAT" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="NOTLP" class="control-label col-lg-4"></label>
+                <input asp-for="NOTLP" class="col-lg-8" />
+                <span asp-validation-for="NOTLP" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="NOFAX" class="control-label col-lg-4"></label>
+                <input asp-for="NOFAX" class="col-lg-8" />
+                <span asp-validation-for="NOFAX" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="CONTACTPERSON" class="control-label col-lg-4"></label>
+                <input asp-for="CONTACTPERSON" class="col-lg-8" />
+                <span asp-validation-for="CONTACTPERSON" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="EMAIL" class="control-label col-lg-4"></label>
+                <input asp-for="EMAIL" class="col-lg-8" />
+                <span asp-validation-for="EMAIL" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="UPDATEDBY" class="control-label col-lg-4"></label>
+                <input asp-for="UPDATEDBY" class="col-lg-8" />
+                <span asp-validation-for="UPDATEDBY" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <label asp-for="UPDATEDATE" class="control-label col-lg-4"></label>
+                <input asp-for="UPDATEDATE" value="@DateTime.Today" type="datetime" class="control-label col-lg-8" />
+                <span asp-validation-for="UPDATEDATE" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-12">
+                <input type="submit" value="Simpan" class="btn btn-save pull-right" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Kembali</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

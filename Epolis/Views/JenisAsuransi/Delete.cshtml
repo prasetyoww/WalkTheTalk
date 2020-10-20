@@ -1,0 +1,42 @@
+﻿@model EPolis.Models.MJENISASURANSI
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Hapus data ini?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KODEJENISASURANSI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KODEJENISASURANSI)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JENISASURANSI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JENISASURANSI)
+        </dd>
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATEDBY)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATEDBY)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UPDATEDDATE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UPDATEDDATE)
+        </dd>*@
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-delete fa fa-trash" data-toggle="tooltip" title="Hapus" /> | |
+        <a asp-action="Index">Kembali</a>
+    </form>
+</div>

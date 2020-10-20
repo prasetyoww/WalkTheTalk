@@ -1,0 +1,51 @@
+﻿@model IEnumerable<EPolis.Models.MJENISASURANSI>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center><h2>DAFTAR JENIS ASURANSI</h2></center>
+
+<p>
+    <a asp-action="Create" class="btn-lg btn-add fa fa-plus"> Tambah Baru</a>
+</p>
+<table class="table table-bordered table-responsive" id="table">
+    <thead>
+
+        <tr>
+            <th>No.</th>
+            <th>
+                @Html.DisplayNameFor(model => model.KODEJENISASURANSI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JENISASURANSI)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int sno = 0;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{ sno++; }
+                    @sno
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KODEJENISASURANSI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JENISASURANSI)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID" data-toggle="tooltip" title="Edit" class="btn btn-edit fa fa-edit"></a> |
+                    <a asp-action="Details" asp-route-id="@item.ID" data-toggle="tooltip" title="Lihat Detail" class="btn btn-edit fa fa-eye"></a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID" data-toggle="tooltip" title="Hapus" class="btn btn-edit fa fa-trash"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

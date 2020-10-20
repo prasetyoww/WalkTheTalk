@@ -1,0 +1,58 @@
+﻿@model EpolisParam.Models.Mpertanggungan
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Mpertanggungan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KODEPERTANGGUNGAN" class="control-label"></label>
+                <input asp-for="KODEPERTANGGUNGAN" class="col-lg-8" />
+                <span asp-validation-for="KODEPERTANGGUNGAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DESKRIPSI" class="control-label"></label>
+                <input asp-for="DESKRIPSI" class="col-lg-8" />
+                <span asp-validation-for="DESKRIPSI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RATEPERTANGGUNGAN" class="control-label"></label>
+                <input asp-for="RATEPERTANGGUNGAN" class="col-lg-8" />
+                <span asp-validation-for="RATEPERTANGGUNGAN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RESIKO" class="control-label"></label>
+                <input asp-for="RESIKO" class="col-lg-8" />
+                <span asp-validation-for="RESIKO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATEDBY" class="control-label"></label>
+                <input asp-for="UPDATEDBY" class="col-lg-8" />
+                <span asp-validation-for="UPDATEDBY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UPDATEDATE" class="control-label"></label>
+                <input asp-for="UPDATEDATE" class="col-lg-8" />
+                <span asp-validation-for="UPDATEDATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
